@@ -21,10 +21,10 @@ function copyTemplateDir (srcDir, outDir, vars, cb) {
     vars = {}
   }
 
-  assert.equal(typeof srcDir, 'string')
-  assert.equal(typeof outDir, 'string')
-  assert.equal(typeof vars, 'object')
-  assert.equal(typeof cb, 'function')
+  assert.strictEqual(typeof srcDir, 'string')
+  assert.strictEqual(typeof outDir, 'string')
+  assert.strictEqual(typeof vars, 'object')
+  assert.strictEqual(typeof cb, 'function')
 
   // create directory
   mkdirp(outDir, function (err) {
