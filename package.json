@@ -1,14 +1,14 @@
 {
-  "name": "copy-template-dir",
+  "name": "@tsbb/copy-template-dir",
   "version": "1.4.0",
   "description": "High throughput template dir writes",
   "main": "index.js",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra --no-dev",
-    "test": "standard && npm run deps && NODE_ENV=test node test",
-    "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test/index.js"
+    "test": "npm run deps && NODE_ENV=test node test",
+    "test:cov": "npm run deps && NODE_ENV=test nyc tape test/index.js && nyc report --reporter=lcov"
   },
-  "repository": "yoshuawuyts/copy-template-dir",
+  "repository": "tsbbjs/copy-template-dir",
   "keywords": [
     "template",
     "directory",
@@ -25,15 +25,15 @@
     "mkdirp": "^0.5.1",
     "noop2": "^2.0.0",
     "pump": "^1.0.0",
-    "readdirp": "^2.0.0",
-    "run-parallel": "^1.1.4"
+    "readdirp": "^3.6.0",
+    "run-parallel": "^1.2.0"
   },
   "devDependencies": {
     "concat-stream": "^1.5.0",
     "dependency-check": "^2.5.1",
-    "istanbul": "^0.3.21",
+    "istanbul": "^0.4.5",
+    "nyc": "^17.0.0",
     "rimraf": "^2.4.3",
-    "standard": "^5.3.1",
     "tape": "^4.2.0"
   },
   "files": [

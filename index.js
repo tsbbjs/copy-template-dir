@@ -29,8 +29,7 @@ function copyTemplateDir (srcDir, outDir, vars, cb) {
   // create directory
   mkdirp(outDir, function (err) {
     if (err) return cb(err)
-
-    const rs = readdirp({ root: srcDir })
+    const rs = readdirp(srcDir, {})
     const streams = []
     const createdFiles = []
 
@@ -57,9 +56,9 @@ function writeFile (outDir, vars, file) {
   return function (done) {
     const fileName = file.path
     const inFile = file.fullPath
-    const parentDir = file.parentDir
+    const parentDir = path.basename(file.dirent.path)
     const outFile = path.join(outDir, maxstache(removeUnderscore(fileName), vars))
-
+    
     mkdirp(path.join(outDir, maxstache(parentDir, vars)), function (err) {
       if (err) return done(err)
 
