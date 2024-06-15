@@ -8,7 +8,10 @@
     "test": "npm run deps && NODE_ENV=test node test",
     "test:cov": "npm run deps && NODE_ENV=test nyc tape test/index.js && nyc report --reporter=lcov"
   },
-  "repository": "tsbbjs/copy-template-dir",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsbbjs/copy-template-dir.git"
+  },
   "keywords": [
     "template",
     "directory",
